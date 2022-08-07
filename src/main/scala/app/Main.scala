@@ -139,15 +139,15 @@ object Main {
     val pixelRadius = BallRadiusMeters * PixelsPerMeter
     simulation.balls.foreach { b =>
       if (b.anchor == 0) {
-        // Draw each mobile ball as a filled-in, green circle.
-        context.fillStyle = "#8f0"
+        // Draw each mobile ball as a filled-in circle.
+        context.fillStyle = "#808080"
         context.beginPath()
         context.arc(screenHor(b.x), screenVer(b.y), pixelRadius, 0, 2 * math.Pi, true)
         context.fill()
         context.stroke()
       } else {
-        // Draw each anchored ball as a filled-in, red square.
-        context.fillStyle = "#f80"
+        // Draw each anchored ball as a filled-in square.
+        context.fillStyle = "#FFD700"
         val x1 = screenHor(b.x) - pixelRadius
         val y1 = screenVer(b.y) - pixelRadius
         context.strokeRect(x1, y1, 2 * pixelRadius, 2 * pixelRadius)
